@@ -47,11 +47,21 @@ function getAllShops() {
   return ShopCollection.find()
 }
 
+function getShop(shopId) {
+  return ShopCollection.findById(shopId)
+}
+
+function addNewShop(shopObject) {
+  return ShopCollection.create(shopObject)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getAllShops
+  getAllShops,
+  getShop,
+  addNewShop
 }

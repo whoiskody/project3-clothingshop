@@ -44,6 +44,20 @@ shopRouter.get('/', (req, res) => {
   
 })
 
+shopRouter.get('/:shopId', (req,res) => {
+  shopApi.getShop(req.params.shopId)
+    .then((shop) => {
+      res.json(shop)
+    })
+})
+
+shopRouter.post('/', (req, res) => {
+  shopApi.addNewShop(req.body)
+    .then((shop) => {
+      res.json(shop)
+    })
+})
+
 /* Step 6
  *
  * Export the router from the file.
