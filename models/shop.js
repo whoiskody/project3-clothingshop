@@ -27,7 +27,7 @@ const mongoose = require('./connection.js')
  */
 const ShopSchema = new mongoose.Schema({
  name: String,
- size: String
+ description: String
 })
 
 /* Step 3
@@ -55,6 +55,14 @@ function addNewShop(shopObject) {
   return ShopCollection.create(shopObject)
 }
 
+function updateShop(shopId, updatedShop) {
+  return ShopCollection.findByIdAndUpdate(shopId, updatedShop, {new: true})
+}
+
+function deleteShop(shopId) {
+  return ShopCollection.findByIdAndDelete(shopId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -63,5 +71,8 @@ function addNewShop(shopObject) {
 module.exports = {
   getAllShops,
   getShop,
-  addNewShop
+  addNewShop,
+  updateShop,
+  deleteShop
+
 }

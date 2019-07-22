@@ -9,14 +9,19 @@ import { Link } from 'react-router-dom'
  * Rename this class to reflect the component being created
  *
  */
-export default class HelloWorld extends Component {
+export default class Shops extends Component {
 
     /* Step 3
     * Create a state for the component to store view data
     *
     */
     state = {
-        message: ''
+        shops: [],
+        isNewFormDisplayed: false,
+        newShop: {
+            name: '',
+            description: ''
+        }
     }
 
     /* Step 4
@@ -27,11 +32,39 @@ export default class HelloWorld extends Component {
     *   -REMINDER remember `setState` it is an async function
     */
     componentDidMount() {
-        axios.get('/api/helloworld')
-            .then((res) => {
-                this.setState({message: res.data})
-            })
+        this.getAllShops()
     }
+
+    getAllShops() {
+        axios.get('/api/shops')
+        .then((res) => {
+            this.setState({shops: res.data})
+    })
+}
+
+handleToggleNewForm = () => {
+    this.setState((state) => {
+        return {isNewFormDisplayed: !state.isNewFormDisplayed}
+        
+    })
+}
+
+handleInputChange = (event) => {
+    const copiedShop = {...this.state.newShop}
+    copiedShop[event.target.name] = event.target.value
+
+    this.setState({newShop: copiedShop})
+}
+
+handleSubmit = (event) => {
+    event.preventDefault()
+
+    axios.post('/api/shops', this.state.newShop)
+        .then(() => {
+            this.setState({isNewFormDisplayed: false})
+            this.getAllShops()
+        })
+}
 
     /* Step 5
     *  The render function manages what is shown in the browser
@@ -40,22 +73,47 @@ export default class HelloWorld extends Component {
     *
     */
     render() {
-        // let shopsList = this.state.shops.map((shop) => {
-        //     return (
-        //         <Link 
-        //             key={shop._id} 
-        //             to={`/shops/${shop._id}`}>
+        let shopsList = this.state.shops.map((shop) => {
+            return (
+                <Link 
+                    key={shop._id} 
+                    to={`/shops/${shop._id}`}>
 
-        //             {shop.name} 
-        //         </Link>
-        //     )
-        // })
+                    {shop.name} 
+                </Link>
+            )
+        })
         return (
+            this.state.isNewFormDisplayed
+                ? <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="new-shop-name">Shop Name</label>
+                    <input 
+                        type="text"
+                        name="name"
+                        id="new-shop-name"
+                        onChange={this.handleInputChange}
+                        value={this.state.newShop.name}
+                    />
+                    <label htmlFor="new-shop-description">Shop Description</label>
+                    <input 
+                        type="text"
+                        name="description"
+                        id="new-shop-description"
+                        onChange={this.handleInputChange}
+                        value={this.state.newShop.description}
+                    />
+
+                    <input type="submit" value="Add Shop"/>
+                </form>
+            : <div>
+                <button onClick={this.handleToggleNewForm}>Create New Shop</button>
             <div>
                 {/* Accessing the value of message from the state object */}
                 {/* {shopsList} */}
                 <h1>yoyoyoyoyoyo</h1>
+                {shopsList}
             </div>
+              </div>
         )
     }
 }
