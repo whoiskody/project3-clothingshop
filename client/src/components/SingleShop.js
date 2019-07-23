@@ -6,7 +6,8 @@ export default class SingleShop extends Component {
     state = {
         shop: {},
         isEditFormDisplayed: false,
-        redirectToHome: false
+        redirectToHome: false,
+        products:[]
     }
 
     componentDidMount () {
@@ -14,7 +15,9 @@ export default class SingleShop extends Component {
         axios.get(`/api/shops/${this.props.match.params.shopId}`)
             .then((res) => {
                 this.setState({shop: res.data})
+                this.getProductForShop()
             })
+            
     }
 
     handleInputChange = (event) => {
@@ -48,11 +51,34 @@ export default class SingleShop extends Component {
             this.setState({redirectToHome: true})
         })
     }
+
+    getProductForShop = () => {
+        axios.get(`/api/shops/${this.props.match.params.shopId}/product`)
+        .then((response) => {
+            this.setState({
+                products: response.data
+            })
+            
+        })
+    }
+
     render() {
+
+        let productList = this.state.products.map((product) => {
+            return (
+                <Link 
+                    key={product._id} 
+                    to={`/shops/${product.shopId}/product`}>
+                    {product.name} 
+                </Link>
+            )
+        })
+        
         if(this.state.redirectToHome) {
             return <Redirect to='/' />
         }
         return (
+
             this.state.isEditFormDisplayed
                 ? <form onSubmit={this.handleSubmit}>
                     <label htmlFor="shop-name">Shop Name</label>
@@ -79,6 +105,7 @@ export default class SingleShop extends Component {
                     <button onClick={this.handleDeleteShop}>Delete Shop</button>
                     <h2>{this.state.shop.name}</h2>
                     <p>{this.state.shop.description}</p>
+                    {productList}
             </div>
         )
     }

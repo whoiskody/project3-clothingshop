@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Shops from './components/Shops'
 import Nav from './components/Nav'
-import Cart from './components/Cart'
+import Product from './components/Product'
 import SingleShop from './components/SingleShop';
 import './App.css';
 
@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Shops}/>
           <Route path='/shops/:shopId' component={SingleShop}/>
-          <Route path='/cart' component={Cart}/>
+          <Route path='/product' component={Product}/>
         </Switch>
         </div>
         </div>

@@ -58,6 +58,20 @@ shopRouter.post('/', (req, res) => {
     })
 })
 
+shopRouter.put('/:shopId', (req, res) => {
+  shopApi.updateShop(req.params.shopId, req.body)
+    .then((updatedShop) => {
+      res.json(updatedShop)
+    })
+})
+
+shopRouter.delete('/:shopId', (req,res) => {
+  shopApi.deleteShop(req.params.shopId, req.body)
+  .then((deletedShop) => {
+    res.json(deletedShop)
+  })
+})
+
 /* Step 6
  *
  * Export the router from the file.
