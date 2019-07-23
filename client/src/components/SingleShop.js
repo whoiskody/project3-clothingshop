@@ -7,7 +7,11 @@ export default class SingleShop extends Component {
         shop: {},
         isEditFormDisplayed: false,
         redirectToHome: false,
-        products:[]
+        products:[],
+        newProduct: {
+            name: '',
+            description: ''
+        }
     }
 
     componentDidMount () {
@@ -20,10 +24,16 @@ export default class SingleShop extends Component {
             
     }
 
+    handleToggleNewProductForm = () => {
+        this.setState((state) => {
+            return {isNewProductFormDisplayed: !state.isNewProductFormDisplayed}
+            
+        })
+    }
+
     handleInputChange = (event) => {
         const copiedShop = {...this.state.shop}
         copiedShop[event.target.name] = event.target.value
-
         this.setState({shop: copiedShop})
     }
 
@@ -62,13 +72,23 @@ export default class SingleShop extends Component {
         })
     }
 
+    handleSubmitNewForm = (event) => {
+        event.preventDefault()
+
+    axios.post('/api/shops/:shopId/product', this.state.newProduct)
+        .then(() => {
+            this.setState({isNewProductFormDisplayed: false})
+            this.getAllProduct()
+        })
+    }
+
     render() {
 
         let productList = this.state.products.map((product) => {
             return (
                 <Link 
                     key={product._id} 
-                    to={`/shops/${product.shopId}/product`}>
+                    to={`/product/${product.productId}`}>
                     {product.name} 
                 </Link>
             )
@@ -78,8 +98,10 @@ export default class SingleShop extends Component {
             return <Redirect to='/' />
         }
         return (
+            
+        <div>
 
-            this.state.isEditFormDisplayed
+            {this.state.isEditFormDisplayed
                 ? <form onSubmit={this.handleSubmit}>
                     <label htmlFor="shop-name">Shop Name</label>
                     <input 
@@ -100,13 +122,46 @@ export default class SingleShop extends Component {
 
                     <input type="submit" value="Update Shop"/>
                 </form>
+             :<div>
+                 <button onClick={this.handleToggleEditForm}>Edit Shop</button>
+             </div>
+            }
+
+             {this.state.isNewProductFormDisplayed
+                ? <form onSubmit={this.handleSubmitNewForm}>
+                    <label htmlFor="new-product-name">Product Name</label>
+                    <input 
+                        type="text"
+                        name="name"
+                        id="new-product-name"
+                        onChange={this.handleInputChange}
+                        value={this.state.products.name}
+                    />
+                    <label htmlFor="new-product-description">Product Description</label>
+                    <input 
+                        type="text"
+                        name="description"
+                        id="new-product-description"
+                        onChange={this.handleInputChange}
+                        value={this.state.products.description}
+                    />
+
+                    <input type="submit" value="Add Product"/>
+                </form>
             : <div>
+                <button onClick={this.handleToggleNewProductForm}>Create New Product</button>
+            <div>
+            
+
+
                 <button onClick={this.handleToggleEditForm}>Edit Shop</button>
                     <button onClick={this.handleDeleteShop}>Delete Shop</button>
                     <h2>{this.state.shop.name}</h2>
                     <p>{this.state.shop.description}</p>
                     {productList}
             </div>
+            </div>}
+        </div>
         )
     }
 }
