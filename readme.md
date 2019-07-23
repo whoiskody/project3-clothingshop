@@ -1,4 +1,4 @@
-# Project 3: Clothing Shop
+# Project 3: Little Five Points Directory
 
 # Project Description
 djgaisjdgoiajgio
@@ -7,9 +7,10 @@ djgaisjdgoiajgio
 https://trello.com/b/NClJ06gR/clothing-site
 
 # Link to Wireframes
+https://imgur.com/eqpUYKa
 https://imgur.com/y3ovxKl
-https://imgur.com/bAqKM4P
+
 
 # Link to ERD
-https://imgur.com/iWVOnKe
+https://imgur.com/6koTSTv
 
