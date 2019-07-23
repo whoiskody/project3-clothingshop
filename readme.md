@@ -1,7 +1,8 @@
 # Project 3: Little Five Points Directory
 
+
 # Project Description
-djgaisjdgoiajgio
+This is an app for finding shops in Little Five Points Area. You can also search through some of their inventory and even add your own shops if you happen to own a shop in the area.
 
 # Link to Trello
 https://trello.com/b/NClJ06gR/clothing-site
