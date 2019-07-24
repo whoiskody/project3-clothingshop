@@ -75,11 +75,17 @@ export default class SingleShop extends Component {
     handleSubmitNewForm = (event) => {
         event.preventDefault()
 
-    axios.post('/api/shops/:shopId/product', this.state.newProduct)
-        .then(() => {
-            this.setState({isNewProductFormDisplayed: false})
-            this.getAllProduct()
-        })
+        axios.post(`/api/shops/${this.props.match.params.shopId}/product`, this.state.newProduct)
+            .then(() => {
+                this.setState({isNewProductFormDisplayed: false})
+                this.getProductForShop()
+            })
+    }
+
+    handleProductInputChange = (event) => {
+        const copiedProduct = {...this.state.newProduct}
+        copiedProduct[event.target.name] = event.target.value
+        this.setState({newProduct: copiedProduct})
     }
 
     render() {
@@ -88,7 +94,7 @@ export default class SingleShop extends Component {
             return (
                 <Link 
                     key={product._id} 
-                    to={`/product/${product.productId}`}>
+                    to={`/product/${product._id}`}>
                     {product.name} 
                 </Link>
             )
@@ -134,7 +140,7 @@ export default class SingleShop extends Component {
                         type="text"
                         name="name"
                         id="new-product-name"
-                        onChange={this.handleInputChange}
+                        onChange={this.handleProductInputChange}
                         value={this.state.products.name}
                     />
                     <label htmlFor="new-product-description">Product Description</label>
@@ -142,7 +148,7 @@ export default class SingleShop extends Component {
                         type="text"
                         name="description"
                         id="new-product-description"
-                        onChange={this.handleInputChange}
+                        onChange={this.handleProductInputChange}
                         value={this.state.products.description}
                     />
 
