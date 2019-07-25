@@ -11,7 +11,8 @@ export default class SingleShop extends Component {
         products:[],
         newProduct: {
             name: '',
-            description: ''
+            description: '',
+            image: ''
         }
     }
 
@@ -76,7 +77,7 @@ export default class SingleShop extends Component {
     handleSubmitNewForm = (event) => {
         event.preventDefault()
 
-        axios.post(`/api/shops/${this.props.match.params.shopId}/product`, this.state.newProduct)
+        axios.post(`/api/shops/${this.props.match.params.shopId}/products`, this.state.newProduct)
             .then(() => {
                 this.setState({isNewProductFormDisplayed: false})
                 this.getProductForShop()
@@ -96,6 +97,7 @@ export default class SingleShop extends Component {
                 <Link 
                     key={product._id} 
                     to={`/shops/${this.state.shop._id}/products/${product._id}`}>
+                    <img src ={product.image} />
                     {product.name} 
                 </Link>
             )
@@ -159,6 +161,14 @@ export default class SingleShop extends Component {
                         id="new-product-description"
                         onChange={this.handleProductInputChange}
                         value={this.state.products.description}
+                    />
+                    <label htmlFor="new-product-image">Product Image</label>
+                    <input 
+                        type="text"
+                        name="image"
+                        id="new-product-image"
+                        onChange={this.handleInputChange}
+                        value={this.state.products.image}
                     />
 
                     <input type="submit" value="Add Product"/>
