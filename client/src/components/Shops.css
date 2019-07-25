@@ -1,4 +1,21 @@
+.board {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 40% 20% 100%;
+    background-color: aqua;
+}
+
+.board h1 {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.board h2 {
+    grid-row: 2;
+}
+
 .listy a {
+    grid-row: 3;
     color: black;
     padding: 15px;
     display: table-cell;
