@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import './Shops.css';
 
 /* Step 2
  * Rename this class to reflect the component being created
@@ -109,7 +110,7 @@ handleSubmit = (event) => {
                 <button onClick={this.handleToggleNewForm}>Create New Shop</button>
             <div>
                 {/* Accessing the value of message from the state object */}
-                <h1>Shop List</h1>
+                <h1 style={{color: "red"}}>Shop List</h1>
                 {shopsList}
             </div>
               </div>
