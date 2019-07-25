@@ -5,18 +5,18 @@ nav {
 }
 
 ul {
-    padding: 30px;
+    padding: 33px;
     font-size: 20px;
     margin: -5px;
 }
 
-a {
+.nav a {
     color: whitesmoke;
     text-decoration: none;
     padding: 15px;
 }
 
-a:hover {
+.nav a:hover {
     font-size: 22px;
 	color: rgb(245, 209, 92);
 }

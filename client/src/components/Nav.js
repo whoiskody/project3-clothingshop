@@ -8,10 +8,8 @@ export default class Nav extends Component {
             <nav>
           <div>
               <ul>
-                  <a>
+                  <a className= "nav">
                   <Link to="/">Home</Link>
-                  </a>
-                  <a>
                   <Link to="/about">About</Link>
                   </a>
               </ul>
