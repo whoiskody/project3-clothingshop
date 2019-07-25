@@ -1,4 +1,8 @@
 .listy a {
     color: black;
     padding: 15px;
+    display: table-cell;
+    float: left;
+    clear: left;
+    
 }

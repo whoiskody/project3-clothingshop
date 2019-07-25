@@ -162,9 +162,9 @@ export default class SingleShop extends Component {
 
                 <button onClick={this.handleToggleEditForm}>Edit Shop</button>
                     <button onClick={this.handleDeleteShop}>Delete Shop</button>
-                    <h1>Product List</h1>
-                    <h2>{this.state.shop.name}</h2>
+                    <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
+                    <h2>Product List</h2>
                     {productList}
             </div>
             </div>}

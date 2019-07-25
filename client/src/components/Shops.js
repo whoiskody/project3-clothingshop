@@ -110,9 +110,12 @@ handleSubmit = (event) => {
                 <button onClick={this.handleToggleNewForm}>Create New Shop</button>
             <div>
                 {/* Accessing the value of message from the state object */}
-                <h1>Shop List</h1>
+                <h1>Little Five Points</h1>
+                <h2>Shop List</h2>
                 <div className= "listy">
-                {shopsList}
+                    <p>
+                        {shopsList}
+                    </p>
                 </div>
             </div>
               </div>
