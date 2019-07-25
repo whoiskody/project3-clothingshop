@@ -33,7 +33,7 @@ export default class Product extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
 
-        axios.put(`/api/shops/${this.state.shop._id}/products/${this.props.match.params.productId}`, this.state.product)
+        axios.put(`/api/shops/${this.props.match.params.shopId}/products/${this.props.match.params.productId}`, this.state.product)
             .then((res) => {
                 this.setState({
                     shop: res.data,
@@ -42,10 +42,16 @@ export default class Product extends Component {
             })
     }
 
+    handleInputChange = (event) => {
+        const copiedProduct = {...this.state.product}
+        copiedProduct[event.target.name] = event.target.value
+        this.setState({product: copiedProduct})
+    }
+
     render() {
 
         if(this.state.redirectToHome) {
-            return <Redirect to='/' />
+            return <Redirect to={`/shops/${this.props.match.params.shopId}`} />
         }
 
         return (
