@@ -85,6 +85,7 @@ export default class SingleShop extends Component {
     }
 
     handleProductInputChange = (event) => {
+        console.log(event.target.name)
         const copiedProduct = {...this.state.newProduct}
         copiedProduct[event.target.name] = event.target.value
         this.setState({newProduct: copiedProduct})
@@ -152,7 +153,7 @@ export default class SingleShop extends Component {
                         name="name"
                         id="new-product-name"
                         onChange={this.handleProductInputChange}
-                        value={this.state.products.name}
+                        value={this.state.newProduct.name}
                     />
                     <label htmlFor="new-product-description">Product Description</label>
                     <input 
@@ -160,15 +161,15 @@ export default class SingleShop extends Component {
                         name="description"
                         id="new-product-description"
                         onChange={this.handleProductInputChange}
-                        value={this.state.products.description}
+                        value={this.state.newProduct.description}
                     />
                     <label htmlFor="new-product-image">Product Image</label>
                     <input 
                         type="text"
                         name="image"
                         id="new-product-image"
-                        onChange={this.handleInputChange}
-                        value={this.state.products.image}
+                        onChange={this.handleProductInputChange}
+                        value={this.state.newProduct.image}
                     />
 
                     <input type="submit" value="Add Product"/>
@@ -179,13 +180,16 @@ export default class SingleShop extends Component {
             
 
 
-                <button onClick={this.handleToggleEditForm}>Edit Shop</button>
+                {/* <button onClick={this.handleToggleEditForm}>Edit Shop</button> */}
                     <button onClick={this.handleDeleteShop}>Delete Shop</button>
+                    <img src={this.state.shop.image}/>
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
                     <h2>Product List</h2>
                     <div className= "singleListy">
-                    {productList}
+                        <p>
+                           {productList} 
+                        </p>
                     </div>
             </div>
             </div>}
