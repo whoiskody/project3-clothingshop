@@ -27,7 +27,8 @@ const mongoose = require('./connection.js')
  */
 const ShopSchema = new mongoose.Schema({
  name: String,
- description: String
+ description: String,
+ image: String
 })
 
 /* Step 3

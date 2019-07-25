@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import './SingleShop.css';
 
 export default class SingleShop extends Component {
     state = {
@@ -125,6 +126,14 @@ export default class SingleShop extends Component {
                         onChange={this.handleInputChange}
                         value={this.state.shop.description}
                     />
+                    <label htmlFor="shop-image">Shop Image</label>
+                    <input 
+                        type="text"
+                        name="image"
+                        id="shop-image"
+                        onChange={this.handleInputChange}
+                        value={this.state.shop.image}
+                    />
 
                     <input type="submit" value="Update Shop"/>
                 </form>
@@ -165,7 +174,9 @@ export default class SingleShop extends Component {
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
                     <h2>Product List</h2>
+                    <div className= "singleListy">
                     {productList}
+                    </div>
             </div>
             </div>}
         </div>

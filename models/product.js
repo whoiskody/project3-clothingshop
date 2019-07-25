@@ -28,6 +28,7 @@ const mongoose = require('./connection.js')
 const ProductSchema = new mongoose.Schema({
  name: String,
  description: String,
+ image: String,
  shopId: mongoose.Types.ObjectId
 })
 

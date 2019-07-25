@@ -21,7 +21,8 @@ export default class Shops extends Component {
         isNewFormDisplayed: false,
         newShop: {
             name: '',
-            description: ''
+            description: '',
+            image: ''
         }
     }
 
@@ -79,7 +80,7 @@ handleSubmit = (event) => {
                 <Link 
                     key={shop._id} 
                     to={`/shops/${shop._id}`}>
-
+                    <img src ={shop.image} />
                     {shop.name} 
                 </Link>
             )
@@ -102,6 +103,14 @@ handleSubmit = (event) => {
                         id="new-shop-description"
                         onChange={this.handleInputChange}
                         value={this.state.newShop.description}
+                    />
+                    <label htmlFor="new-shop-image">Shop Image</label>
+                    <input 
+                        type="text"
+                        name="image"
+                        id="new-shop-image"
+                        onChange={this.handleInputChange}
+                        value={this.state.newShop.image}
                     />
 
                     <input type="submit" value="Add Shop"/>
