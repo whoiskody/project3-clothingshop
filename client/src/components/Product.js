@@ -8,7 +8,7 @@ export default class Product extends Component {
     }
 
     componentDidMount() {
-        axios.get(`/api/shops/${this.props.match.params.productId}/product`)
+        axios.get(`/api/shops/${this.props.match.params.shopId}/products/${this.props.match.params.productId}`)
             .then((response) => {
                 this.setState({
                     product: response.data

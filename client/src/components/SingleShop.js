@@ -63,7 +63,7 @@ export default class SingleShop extends Component {
     }
 
     getProductForShop = () => {
-        axios.get(`/api/shops/${this.props.match.params.shopId}/product`)
+        axios.get(`/api/shops/${this.props.match.params.shopId}/products`)
         .then((response) => {
             this.setState({
                 products: response.data
@@ -94,7 +94,7 @@ export default class SingleShop extends Component {
             return (
                 <Link 
                     key={product._id} 
-                    to={`/product/${product._id}`}>
+                    to={`/shops/${this.state.shop._id}/products/${product._id}`}>
                     {product.name} 
                 </Link>
             )
@@ -162,6 +162,7 @@ export default class SingleShop extends Component {
 
                 <button onClick={this.handleToggleEditForm}>Edit Shop</button>
                     <button onClick={this.handleDeleteShop}>Delete Shop</button>
+                    <h1>Product List</h1>
                     <h2>{this.state.shop.name}</h2>
                     <p>{this.state.shop.description}</p>
                     {productList}
