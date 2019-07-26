@@ -79,9 +79,18 @@ handleSubmit = (event) => {
             return (
                 <Link 
                     key={shop._id} 
-                    to={`/shops/${shop._id}`}>
-                    <img height="125" width="290" src ={shop.image} />
-                    {shop.name}
+                    to={`/shops/${shop._id}`}
+                >
+                    <div className="ui cards">
+                        <div className="image">
+                            <img height="125" width="290" src={shop.image} />
+                        </div>
+                        <div className="content">
+                            <a className="header">{shop.name}</a>
+                        </div>
+                    </div>
+                    {/* <img height="125" width="290" src ={shop.image} />
+                    {shop.name} */}
                 </Link>
             )
         })
