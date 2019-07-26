@@ -8,12 +8,16 @@
     grid-row: 1;
     grid-column: 3;
     justify-self: center;
+    margin: 20px 0px 0px 0px;
 }
 
 .board h1 {
     grid-row: 2;
     grid-column: 3;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ee6a41;
+    height: 40px;
+    border-radius: 50px;
 }
 
 .board h2 {
@@ -64,7 +68,7 @@ button:hover {
         height: 50px;
         transition: all 0.8s;
         cursor: copy;
-        margin: 5px;
+        margin: 20px;
       }
       
       .button span {
