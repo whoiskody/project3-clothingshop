@@ -81,7 +81,7 @@ handleSubmit = (event) => {
                     key={shop._id} 
                     to={`/shops/${shop._id}`}>
                     <img src ={shop.image} />
-                    {shop.name} 
+                    {shop.name}
                 </Link>
             )
         })
@@ -121,12 +121,13 @@ handleSubmit = (event) => {
                 {/* Accessing the value of message from the state object */}
                 <h1>Little Five Points</h1>
                 <h2>Shop List</h2>
-                <div className= "listy">
-                    <p>
-                        {shopsList}
-                    </p>
-                </div>
             </div>
+            <div className= "listy">
+                <p>
+                    {shopsList}
+                </p>
+            </div>
+            
               </div>
         )
     }

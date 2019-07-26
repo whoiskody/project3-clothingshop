@@ -1,17 +1,19 @@
 .board {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 40% 20% 100%;
-    background-color: aqua;
+    grid-template-columns: 20% 16% 30% 20% 20%;
+    grid-template-rows: 40% 20% 100% 20% 20%;
 }
 
 .board h1 {
     grid-row: 1;
     grid-column: 3;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .board h2 {
     grid-row: 2;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 .listy a {
@@ -21,5 +23,8 @@
     display: table-cell;
     float: left;
     clear: left;
-    
+}
+
+.listy img {
+    grid-row: 3;
 }
