@@ -1,17 +1,24 @@
 .board {
     display: grid;
     grid-template-columns: 20% 16% 30% 20% 20%;
-    grid-template-rows: 40% 40%;
+    grid-template-rows: 30% 40% 40%;
+}
+
+.board button {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: center;
 }
 
 .board h1 {
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 3;
     font-family: 'Times New Roman', Times, serif
 }
 
 .board h2 {
-    grid-row: 2;
+    grid-row: 3;
+    grid-column: 1;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
 }
@@ -23,8 +30,7 @@
 }
 
 .listy a {
-    grid-row: 2;
-    grid-row: 2;
+    grid-row: 3;
     color: black;
     padding: 15px;
     display: table-cell;
@@ -41,6 +47,7 @@ button {
     width: 100px;
     height: 30px;
     font-size: 16px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
 }
 
 button:hover {

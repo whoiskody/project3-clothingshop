@@ -1,7 +1,9 @@
 nav {
+    display: flex;
+    /* grid-template-columns: 20% 80%; */
     background-color: black;
-    height: 89px;
-    
+    height: 84px;
+    outline: 5px solid #f4825f
 }
 
 ul {
@@ -11,15 +13,33 @@ ul {
 }
 
 .nav a {
+    grid-column-start: 2;
     color: whitesmoke;
     text-decoration: none;
     padding: 15px;
+    font-weight: bold;
 }
 
 .nav a:hover {
     font-size: 22px;
 	color: #f4825f;
 }
+
+.logo img {
+    grid-column: 1;
+    width: 100px;
+}
+
+.nav-list {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+.nav-home {
+    padding: 0px 0px 0px 485px;
+}
+
 
 
 
