@@ -5,7 +5,7 @@ nav {
 }
 
 ul {
-    padding: 33px;
+    padding: 25px;
     font-size: 20px;
     margin: -5px;
 }
@@ -18,7 +18,8 @@ ul {
 
 .nav a:hover {
     font-size: 22px;
-	color: rgb(245, 209, 92);
+	color: #f4825f;
 }
+
 
 
