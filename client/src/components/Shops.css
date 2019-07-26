@@ -1,7 +1,7 @@
 .board {
     display: grid;
     grid-template-columns: 20% 16% 30% 20% 20%;
-    grid-template-rows: 40% 20% 100% 20% 20%;
+    grid-template-rows: 40% 40%;
 }
 
 .board h1 {
@@ -16,8 +16,15 @@
     font-style: italic;
 }
 
+.listy {
+    display: grid;
+    grid-template-columns: 25% 16% 30% 20% 20%;
+    grid-template-rows: 40% 40%;
+}
+
 .listy a {
-    grid-row: 3;
+    grid-row: 2;
+    grid-row: 2;
     color: black;
     padding: 15px;
     display: table-cell;
@@ -26,5 +33,6 @@
 }
 
 .listy img {
-    grid-row: 3;
+    grid-row: 1;
+    display: table-cell;
 }

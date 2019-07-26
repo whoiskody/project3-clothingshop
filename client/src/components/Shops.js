@@ -80,7 +80,7 @@ handleSubmit = (event) => {
                 <Link 
                     key={shop._id} 
                     to={`/shops/${shop._id}`}>
-                    <img src ={shop.image} />
+                    <img height="125" width="290" src ={shop.image} />
                     {shop.name}
                 </Link>
             )
