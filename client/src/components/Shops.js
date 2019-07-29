@@ -80,13 +80,14 @@ handleSubmit = (event) => {
                 <Link 
                     key={shop._id} 
                     to={`/shops/${shop._id}`}
+                    className="shop-card"
                 >
                     <div className="ui cards">
                         <div className="image">
                             <img height="125" width="290" src={shop.image} />
                         </div>
                         <div className="content">
-                            <a className="header">{shop.name}</a>
+                            <p className="header">{shop.name}</p>
                         </div>
                     </div>
                     {/* <img height="125" width="290" src ={shop.image} />
@@ -130,15 +131,13 @@ handleSubmit = (event) => {
                 <button onClick={this.handleToggleNewForm}>Add Shop</button>
                 {/* Accessing the value of message from the state object */}
                 <h1>Little Five Points</h1>
-                <h2>Shop List</h2>
             </div>
             <div className= "listy">
                 <p>
                     {shopsList}
                 </p>
             </div>
-            
-              </div>
+            </div>
         )
     }
 }
