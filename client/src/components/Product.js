@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import './Product.css';
 
 export default class Product extends Component {
     state = {
@@ -59,23 +60,30 @@ export default class Product extends Component {
 
             {this.state.isEditFormDisplayed
                 ? <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="product-name">Product Name</label>
+                    <div className="productName" >
+                       <label htmlFor="product-name">Product Name</label>
                     <input 
                         type="text" 
                         id="product-name" 
                         name="name" 
                         onChange={this.handleInputChange}
                         value={this.state.product.name}
-                    />
-                    <label htmlFor="product-description">Product Description</label>
+                    /> 
+                    </div>
+                    
+                    <div className="productDescription">
+                       <label htmlFor="product-description">Product Description</label>
                     <input 
                         type="text" 
                         id="product-description" 
                         name="description" 
                         onChange={this.handleInputChange}
                         value={this.state.product.description}
-                    />
-                    <label htmlFor="product-image">Product Image</label>
+                    /> 
+                    </div>
+                    
+                    <div className="productImage">
+                        <label htmlFor="product-image">Product Image</label>
                     <input 
                         type="text"
                         name="image"
@@ -83,8 +91,12 @@ export default class Product extends Component {
                         onChange={this.handleInputChange}
                         value={this.state.product.image}
                     />
-
-                    <input type="submit" value="Update Product"/>
+                    </div>
+                    
+                    <div className="updateProduct" >
+                       <input type="submit" value="Update Product"/> 
+                    </div>
+                    
                 </form>
              :<div>
                  <button onClick={this.handleToggleEditForm}>Edit Product</button>

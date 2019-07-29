@@ -1,0 +1,87 @@
+form {
+    border: 1px solid #c3c3c3;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    margin: 40px 500px;
+  }
+
+.productName {
+    justify-content: center;
+    margin: 30px 10px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ee6a41;
+    height: 60px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: rgb(45, 45, 45);
+   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.productDescription {
+    justify-content: center;
+    margin: 30px 10px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ee6a41;
+    height: 60px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: rgb(45, 45, 45);
+   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.productImage {
+    margin: 30px 10px;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ee6a41;
+    height: 60px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: rgb(45, 45, 45);
+   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.updateProduct input:hover {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: 1px solid black;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 0px;
+    width: 150px;
+    height: 50px;
+    transition: all 0.8s;
+    cursor: copy;
+    margin: 10px;
+  }
+
+  .updateProduct input {
+    margin: 0px 0px 20px;
+    width: 115px;
+    height: 30px;
+    border-radius: 4px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    font-size: 14px;
+    border: 1px solid black;
+}

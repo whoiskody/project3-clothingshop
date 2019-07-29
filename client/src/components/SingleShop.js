@@ -113,7 +113,8 @@ export default class SingleShop extends Component {
 
             {this.state.isEditFormDisplayed
                 ? <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="shop-name">Shop Name</label>
+                    <div className= "shopName" >
+                        <label htmlFor="shop-name">Shop Name </label>
                     <input 
                         type="text" 
                         id="shop-name" 
@@ -121,7 +122,10 @@ export default class SingleShop extends Component {
                         onChange={this.handleInputChange}
                         value={this.state.shop.name}
                     />
-                    <label htmlFor="shop-description">Shop Description</label>
+                    </div>
+                    
+                    <div className= "shopDescription" >
+                        <label htmlFor="shop-description">Shop Description</label>
                     <input 
                         type="text" 
                         id="shop-description" 
@@ -129,16 +133,23 @@ export default class SingleShop extends Component {
                         onChange={this.handleInputChange}
                         value={this.state.shop.description}
                     />
-                    <label htmlFor="shop-image">Shop Image</label>
+                    </div>
+                    
+                    <div className= "shopImage" >
+                       <label htmlFor="shop-image">Shop Image</label>
                     <input 
                         type="text"
                         name="image"
                         id="shop-image"
                         onChange={this.handleInputChange}
                         value={this.state.shop.image}
-                    />
-
-                    <input type="submit" value="Update Shop"/>
+                    /> 
+                    </div>
+                    
+                    <div className= "updateShop" >
+                       <input type="submit" value="Update Shop"/> 
+                    </div>
+                    
                 </form>
              :<div>
                  <button onClick={this.handleToggleEditForm}>Edit Shop</button>
@@ -148,15 +159,19 @@ export default class SingleShop extends Component {
 
              {this.state.isNewProductFormDisplayed
                 ? <form onSubmit={this.handleSubmitNewForm}>
-                    <label htmlFor="new-product-name">Product Name</label>
+                    <div className= "productName" >
+                       <label htmlFor="new-product-name">Product Name</label>
                     <input 
                         type="text"
                         name="name"
                         id="new-product-name"
                         onChange={this.handleProductInputChange}
                         value={this.state.newProduct.name}
-                    />
-                    <label htmlFor="new-product-description">Product Description</label>
+                    /> 
+                    </div>
+
+                    <div className= "productDescription" >
+                        <label htmlFor="new-product-description">Product Description</label>
                     <input 
                         type="text"
                         name="description"
@@ -164,7 +179,10 @@ export default class SingleShop extends Component {
                         onChange={this.handleProductInputChange}
                         value={this.state.newProduct.description}
                     />
-                    <label htmlFor="new-product-image">Product Image</label>
+                    </div>
+                    
+                    <div className= "productImage" >
+                        <label htmlFor="new-product-image">Product Image</label>
                     <input 
                         type="text"
                         name="image"
@@ -172,8 +190,12 @@ export default class SingleShop extends Component {
                         onChange={this.handleProductInputChange}
                         value={this.state.newProduct.image}
                     />
-
-                    <input type="submit" value="Add Product"/>
+                    </div>
+                    
+                    <div className= "productAdd" >
+                       <input type="submit" value="Add Product"/> 
+                    </div>
+                    
                 </form>
             : <div>
                 <button onClick={this.handleToggleNewProductForm}>Create New Product</button>
@@ -186,7 +208,6 @@ export default class SingleShop extends Component {
                     <img src={this.state.shop.image}/>
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
-                    <h2>Product List</h2>
                     <div className= "singleListy">
                         <p>
                            {productList} 
