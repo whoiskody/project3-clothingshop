@@ -38,7 +38,14 @@ form {
     margin: auto;
 }
 
+.listy img {
+    max-width: 20vw;
+}
+
 .listy a {
+    max-height: 23vw;
+    max-width: 20vw;
+    min-width: 20vw;
     background-image: url("https://images.homedepot-static.com/productImages/57d73b57-b260-47c2-8c77-893fa2ba41d2/svn/mitchell-black-llc-wallpaper-wc391-4st-18-64_600.jpg");
     position: relative;
     border: 2px solid #ee6a41;
