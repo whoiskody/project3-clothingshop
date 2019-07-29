@@ -104,7 +104,7 @@ export default class Product extends Component {
              </div>
             }
             
-            <div>
+            <div className="product">
                 
                 <img src={this.state.product.image}/>
                 <h1>{this.state.product.name}</h1>
