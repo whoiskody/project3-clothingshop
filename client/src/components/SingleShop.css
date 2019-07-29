@@ -40,6 +40,7 @@ form {
 
 .listy img {
     max-width: 20vw;
+    min-width: 20vw;
 }
 
 .listy a {

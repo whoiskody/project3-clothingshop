@@ -1,5 +1,6 @@
 img {
   max-width: 20vw;
+  min-width: 20vw;
 }
 .press button {
   width: 125px;
