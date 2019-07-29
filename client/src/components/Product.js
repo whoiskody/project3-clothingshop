@@ -100,11 +100,12 @@ export default class Product extends Component {
                 </form>
              :<div>
                  <button onClick={this.handleToggleEditForm}>Edit Product</button>
+                 <button onClick={this.handleDeleteProduct}>Delete Product</button>
              </div>
             }
             
             <div>
-                <button onClick={this.handleDeleteProduct}>Delete Product</button>
+                
                 <img src={this.state.product.image}/>
                 <h1>{this.state.product.name}</h1>
                 <p>{this.state.product.description}</p>

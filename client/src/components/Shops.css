@@ -1,4 +1,5 @@
 .board {
+
     display: grid;
     grid-template-columns: 20% 16% 30% 20% 20%;
     grid-template-rows: 30% 40% 40%;
@@ -34,11 +35,13 @@
 } */
 
 .listy {
-    display: grid;
-    grid-template-columns: 25% 16% 30% 20% 20%;
-    grid-template-rows: 40% 40%;
-    border: 1px solid black;
-    margin: 20px;
+    max-width: 1000px;
+    display: flex;
+    /* grid-template-columns: 25% 16% 30%;
+    grid-template-rows: 40% 40%; */
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    margin: auto;
 }
 
 .listy a {
@@ -113,6 +116,7 @@ button:hover {
 
    a.shop-card {
     justify-content: space-around;
+    margin: 2px;
     }
 
     p {
@@ -120,6 +124,99 @@ button:hover {
         text-decoration: none !important;
     }
 
-    label {
-    
+    form {
+      border: 1px solid #c3c3c3;
+      /* display: flex; */
+      /* flex-wrap: wrap; */
+      /* align-content: center; */
+      margin: 40px 500px;
+      width: 273px;
     }
+
+    .shopName {
+      justify-content: center;
+      margin: 30px 10px;
+      font-size: 24px;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #ee6a41;
+      height: 60px;
+      width: 250px;
+      border: 1px solid black;
+      border-radius: 50px;
+      color: whitesmoke;
+      font-weight: bold;
+      -webkit-text-stroke-width: .5px;
+     -webkit-text-stroke-color: rgb(45, 45, 45);
+     box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+  
+  }
+
+  .shopDescription {
+    justify-content: center;
+    margin: 30px 10px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ee6a41;
+    height: 60px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-color: rgb(45, 45, 45);
+   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.shopImage {
+  margin: 30px 10px;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #ee6a41;
+  height: 60px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: whitesmoke;
+  font-weight: bold;
+  -webkit-text-stroke-width: .5px;
+ -webkit-text-stroke-color: rgb(45, 45, 45);
+ box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.shopImage {
+  margin: 30px 10px;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #ee6a41;
+  height: 60px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: whitesmoke;
+  font-weight: bold;
+  -webkit-text-stroke-width: .5px;
+ -webkit-text-stroke-color: rgb(45, 45, 45);
+ box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+
+}
+
+.shopAdd input:hover {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: 1px solid black;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 0px;
+  width: 150px;
+  height: 50px;
+  transition: all 0.8s;
+  cursor: copy;
+  margin: 10px;
+}

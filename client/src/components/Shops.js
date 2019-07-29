@@ -98,15 +98,19 @@ handleSubmit = (event) => {
         return (
             this.state.isNewFormDisplayed
                 ? <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="new-shop-name">Shop Name</label>
+                    <div className="shopName" >
+                       <label htmlFor="new-shop-name">Shop Name </label>
                     <input 
                         type="text"
                         name="name"
                         id="new-shop-name"
                         onChange={this.handleInputChange}
                         value={this.state.newShop.name}
-                    />
-                    <label htmlFor="new-shop-description">Shop Description</label>
+                    /> 
+                    </div>
+                    
+                    <div className="shopDescription">
+                        <label htmlFor="new-shop-description">Shop Description</label>
                     <input 
                         type="text"
                         name="description"
@@ -114,7 +118,10 @@ handleSubmit = (event) => {
                         onChange={this.handleInputChange}
                         value={this.state.newShop.description}
                     />
-                    <label htmlFor="new-shop-image">Shop Image</label>
+                    </div>
+                    
+                    <div className="shopImage">
+                        <label htmlFor="new-shop-image">Shop Image</label>
                     <input 
                         type="text"
                         name="image"
@@ -122,8 +129,12 @@ handleSubmit = (event) => {
                         onChange={this.handleInputChange}
                         value={this.state.newShop.image}
                     />
-
-                    <input type="submit" value="Add Shop"/>
+                    </div>
+                    
+                    <div className="shopAdd">
+                       <input type="submit" value="Add Shop"/> 
+                    </div>
+                    
                 </form>
             : <div>
                 
@@ -133,9 +144,7 @@ handleSubmit = (event) => {
                 <h1>Little Five Points</h1>
             </div>
             <div className= "listy">
-                <p>
                     {shopsList}
-                </p>
             </div>
             </div>
         )
