@@ -205,7 +205,7 @@ export default class SingleShop extends Component {
 
                 {/* <button onClick={this.handleToggleEditForm}>Edit Shop</button> */}
     
-                    <img src={this.state.shop.image}/>
+                    <img height="250" width="450" src={this.state.shop.image}/>
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
                     <div className= "singleListy">
