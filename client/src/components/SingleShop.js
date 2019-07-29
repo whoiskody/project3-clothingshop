@@ -142,6 +142,7 @@ export default class SingleShop extends Component {
                 </form>
              :<div>
                  <button onClick={this.handleToggleEditForm}>Edit Shop</button>
+                 <button onClick={this.handleDeleteShop}>Delete Shop</button>
              </div>
             }
 
@@ -181,7 +182,7 @@ export default class SingleShop extends Component {
 
 
                 {/* <button onClick={this.handleToggleEditForm}>Edit Shop</button> */}
-                    <button onClick={this.handleDeleteShop}>Delete Shop</button>
+    
                     <img src={this.state.shop.image}/>
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
