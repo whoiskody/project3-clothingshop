@@ -209,9 +209,9 @@ export default class SingleShop extends Component {
                     <h1>{this.state.shop.name}</h1>
                     <p>{this.state.shop.description}</p>
                     <div className= "singleListy">
-                        <p>
+                        <div className= "listy">
                            {productList} 
-                        </p>
+                        </div>
                     </div>
             </div>
             </div>}

@@ -98,7 +98,7 @@ export default class Product extends Component {
                     </div>
                     
                 </form>
-             :<div>
+             :<div className="press">
                  <button onClick={this.handleToggleEditForm}>Edit Product</button>
                  <button onClick={this.handleDeleteProduct}>Delete Product</button>
              </div>

@@ -28,6 +28,35 @@ form {
   width: 273px;
 }
 
+.listy {
+    max-width: 1000px;
+    display: flex;
+    /* grid-template-columns: 25% 16% 30%;
+    grid-template-rows: 40% 40%; */
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+.listy a {
+    background-image: url("https://images.homedepot-static.com/productImages/57d73b57-b260-47c2-8c77-893fa2ba41d2/svn/mitchell-black-llc-wallpaper-wc391-4st-18-64_600.jpg");
+    position: relative;
+    border: 2px solid #ee6a41;
+    border-radius: 40px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    grid-row: 3;
+    color: black;
+    padding: 15px;
+    display: table-cell;
+    /* float: left; */
+    /* clear: left; */
+}
+
+.listy img {
+    grid-row: 1;
+    display: table-cell;
+}
+
 .productName {
     justify-content: center;
     margin: 30px 10px;
